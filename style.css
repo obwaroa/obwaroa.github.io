@@ -1,0 +1,53 @@
+/* Colour tokens: change these to restyle the whole site */
+:root {
+  --bg: #fff7ed;
+  --ink: #2b2b2b;
+  --brand: #c62839;   /* darkened for 4.5:1 contrast with white text */
+  --brand2: #1d4ed8;
+  --card: #ffffff;
+  --line: #e5d9c8;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#12151c; --ink:#eceff4; --brand:#e0505f; --brand2:#1e3a8a; --card:#1d222d; --line:#333b4b; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+header { background: var(--brand2); color: #fff; padding: 1rem 1.5rem; }
+header h1 { margin: 0 0 .4rem; }
+nav a { color: #fff; margin-right: 1rem; text-decoration: none; font-weight: 700; display: inline-block; }
+nav a:hover, nav a.active { text-decoration: underline; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+main { max-width: 900px; margin: auto; padding: 1rem; }
+img { max-width: 100%; height: auto; border-radius: 12px; }
+.card {
+  background: var(--card);
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  margin: 1rem 0;
+}
+.hero { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+.profile-pic { width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 5px solid var(--brand); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.card:hover { transform: translateY(-4px); transition: .2s; }
+.btn { display: inline-block; background: var(--brand); color: #fff; padding: .6rem 1.2rem; border-radius: 999px; text-decoration: none; font-weight: 700; border: 0; font-size: 1rem; cursor: pointer; }
+.btn:hover { filter: brightness(1.1); }
+.links { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid var(--line); padding: .5rem .7rem; text-align: left; vertical-align: top; }
+th { background: var(--brand2); color: #fff; }
+.skills { list-style: none; padding: 0; }
+.skills li { margin-bottom: .8rem; }
+progress { display: block; width: 100%; height: 14px; }
+input[type=text], input[type=email], textarea { width: 100%; max-width: 480px; padding: .5rem; font: inherit; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); }
+.small { font-size: .85rem; opacity: .85; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+footer { text-align: center; padding: 1.5rem; font-size: .9rem; }
+@media (max-width: 480px) { .profile-pic { width: 150px; height: 150px; } header { padding: 1rem; } }
